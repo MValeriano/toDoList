@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <title>TO-DO-LIST</title>
+</head>
+<body>
+<!--
+    no to do list 
+        - uma entrada de dados ( que será a tarefa á ser executada)
+        - precisa fazer algumas coisas com a tarefa :
+            - excluir tarefa;
+            - modificar tarefa;
+            - alterar o status para ( em execução e feito);
+-->
+    <h1> App to-do-list </h1>
+
+    <p>
+        <strong> Organize as tarefas do seu dia a dia com muito mais facilidade. </strong>
+    </p>
+
+    <main>
+        <!-- algumas tag tem sentido ( semantica das tags ) -->
+        <h2> Tarefas </h2>
+        
+        <div>
+            <input type="text" id="tarefa" placeholder="Insira sua tarefa!">
+            <button onclick="adicionarTarefas()"> Enviar Tarefa </button>
+        </div>
+        
+        <div id="alertas"> </div>
+
+        <section>
+        
+        </section>
+
+    </main>
+
+    <script src="Assets/js/script.js"> </script>
+
+</body>
+</html>
+
