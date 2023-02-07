@@ -17,7 +17,7 @@ function adicionarTarefas(){
     tarefas.push( 
         {
             titulo: tarefa.value,
-            status: 'à executar'
+            status: 'à executar'            
         } 
     )   
 
@@ -37,8 +37,35 @@ function exibeTarefas(){
                 <p> ${ task.titulo } </p>
                 <p onclick="alteraStatus()"> ${ task.status } </p>
                 <button onclick="editaTarefas()"> Editar </button>
-                <button onclick="excluiTarefa()"> Excluir </button>
+                <button onclick="excluiTarefa( event )"> Excluir </button>
             </span>`;
     }
+}
+
+function excluiTarefa( event ){
+
+    let elementoPai = event.target.parentNode;
+
+    let tituloTarefa = elementoPai.children[0].innerText;
+    let statusTarefa = elementoPai.children[1].innerText;
+    
+    if( statusTarefa === 'Feito'){
+        alert('Não é possivel excluir a tarefa com o status '+ statusTarefa);
+        return;
+    }
+
+    for( let [index, tarefa] of tarefas.entries()){
+        if( tituloTarefa === tarefa.titulo ){
+            tarefas.splice( index, 1 );            
+        }
+    };
+
+    elementoPai.remove();
+}
+
+
+function evento( e){
+
+    console.log(e);
     
 }
